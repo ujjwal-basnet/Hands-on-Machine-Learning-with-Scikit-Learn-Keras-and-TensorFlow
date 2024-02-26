@@ -1,1 +1,2 @@
  r = n ∑ X Y − ∑ X ∑ Y ( n ∑ X 2 − ( ∑ X ) 2 ) ⋅ ( n ∑ Y 2 − ( ∑ Y ) 2 )
+ we can calculate this by using .corr() method 
