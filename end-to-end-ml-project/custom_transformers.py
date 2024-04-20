@@ -1,4 +1,3 @@
-from sklearn.preprocessing import FunctionTransformer 
 import pandas as pd 
 import numpy as np
 from sklearn.metrics.pairwise import rbf_kernel
@@ -7,6 +6,7 @@ import seaborn as sns
 
 df =  pd.read_csv('/home/ujjwal/cooding/github-p/Hands-on-Machine-Learning-with-Scikit-Learn-Keras-and-TensorFlow/end-to-end-ml-project/datasets/housing.csv')
 print("Skwnees before log transformation is "  , df[['population']].skew())
+
 
 #transforming 
 from sklearn.preprocessing import FunctionTransformer 
