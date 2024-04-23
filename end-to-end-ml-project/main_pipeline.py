@@ -49,5 +49,6 @@ df_Y = df['median_house_value']
 X_process = processing.fit_transform(df_X)
 
 # Convert transformed data to DataFrame for printing
+
 X_process_df = pd.DataFrame(X_process)
-print(X_process_df.head())
+
