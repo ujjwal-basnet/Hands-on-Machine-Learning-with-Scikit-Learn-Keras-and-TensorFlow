@@ -7,7 +7,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.compose import make_column_selector , make_column_transformer 
 
 def column_ratio(X):
-    return X.iloc[:, [0]] / X.iloc[:, [1]]
+    return X[:, [0]] / X[:, [1]]
 
 def ratio_pipeline():
     return make_pipeline(
@@ -44,10 +44,10 @@ remainder=default_num_pipeline)
 # Load data
 df = pd.read_csv('/home/ujjwal/cooding/github-p/Hands-on-Machine-Learning-with-Scikit-Learn-Keras-and-TensorFlow/end-to-end-ml-project/datasets/housing.csv')
 df_X = df.iloc[:, list(range(1, 8)) + list(range(9, 10))]  # Selecting relevant columns
-
+df_Y = df['median_house_value']
 # Apply the transformation
 X_process = processing.fit_transform(df_X)
 
 # Convert transformed data to DataFrame for printing
-X_process_df = pd.DataFrame(X_process, columns=processing.get_feature_names_out())
+X_process_df = pd.DataFrame(X_process)
 print(X_process_df.head())
