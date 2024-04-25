@@ -37,14 +37,16 @@ processing = ColumnTransformer([
     ('rooms_per_house', ratio_pipeline(), ['total_rooms', 'households']),
     ('people_per_house', ratio_pipeline(), ['population', 'households']),
     ('log', log_pipeline, ["total_bedrooms", "total_rooms", "population", "households", "median_income"]),
-    ("cat", cat_pipeline, make_column_selector(dtype_include=object))
-],
-remainder=default_num_pipeline)
+    ("cat", cat_pipeline, make_column_selector(dtype_include=object)) , 
+    ("hosing_median_age" , default_num_pipeline , ['housing_median_age'])
+])
 
 # Load data
 df = pd.read_csv('/home/ujjwal/cooding/github-p/Hands-on-Machine-Learning-with-Scikit-Learn-Keras-and-TensorFlow/end-to-end-ml-project/datasets/housing.csv')
-df_X = df.iloc[:, list(range(1, 8)) + list(range(9, 10))]  # Selecting relevant columns
+df_X = df.iloc[:, list(range(0, 8)) + list(range(9, 10))]  # Selecting relevant columns
 df_Y = df['median_house_value']
+
+
 # Apply the transformation
 X_process = processing.fit_transform(df_X)
 
