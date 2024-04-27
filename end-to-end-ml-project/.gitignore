@@ -1,5 +1,6 @@
-datasets/
-test.ipynb
 __pycache__/
-../vs.code
-../datasets
+datasets/
+images/
+test.ipynb
+code.ipynb
+test2.ipynb
