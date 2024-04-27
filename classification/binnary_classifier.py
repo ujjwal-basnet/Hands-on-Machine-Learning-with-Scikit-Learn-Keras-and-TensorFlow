@@ -9,7 +9,7 @@
  right 
     """
 import numpy as np 
-data = np.load('mnist_data.npz' , allow_pickle= True)
+data = np.load('/home/ujjwal/cooding/github-p/Hands-on-Machine-Learning-with-Scikit-Learn-Keras-and-TensorFlow/classification/mnist_data.npz' , allow_pickle= True)
 X = data['x']
 y = data['y']
 
